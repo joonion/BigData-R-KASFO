@@ -61,6 +61,8 @@ df.3 <- df.2[, c(1, 3, 5, 4)]
 head(df.3)
 str(df.3)
 
+plot(df.3)
+
 agg <- aggregate(df.3, 
                  by = list(year = df.3$연도),
                  sum)
