@@ -57,10 +57,9 @@ str(df.1)
 # 행복기숙사 지원현황 데이터 탐색
 
 colnames(df.2)
-df.3 <- df.2[, c(1, 3, 5, 4, 10)]
+df.3 <- df.2[, c(1, 3, 5, 4)]
 head(df.3)
-
-plot(df.3)
+str(df.3)
 
 agg <- aggregate(df.3, 
                  by = list(year = df.3$연도),
@@ -87,7 +86,8 @@ lines(agg$year, 10 * agg$수용인원.명.,
       lty = 3,
       col = "magenta")
 
-unique(df.3$진행현황)
+unique(df.2$진행현황)
+df.3$진행현황 <- df.2$진행현황 
 for (i in 1:nrow(df.3)) {
     df.3$진행현황[i] <- unlist(strsplit(df.3$진행현황[i], '중|완'))[1]
 }
