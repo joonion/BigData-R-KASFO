@@ -51,7 +51,6 @@ boxplot(df.1$X2인실.기숙사비.천원. ~ df.1$구분,
 outliers <- boxplot.stats(df.1$X2인실.기숙사비.천원.)$out
 outliers
 df.1[df.1$X2인실.기숙사비.천원. %in% outliers, c(1, 2, 3, 5)]
-
 str(df.1)
 
 # 행복기숙사 지원현황 데이터 탐색
@@ -115,10 +114,8 @@ register_google(key = myGoogleMapAPIKey)
 
 names <- df.1$기숙사명 
 names
-
 addrs <- df.1$기숙사명 
 addrs
-
 capas <- df.1$수용인원수.명.
 capas
 
